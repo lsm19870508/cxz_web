@@ -28,7 +28,7 @@ class RegisterRequest extends Request
             'email'=>'required | between:1,20 | email',
             'name'=>'required | between:4,12',
             'password'=>'required',
-            'age'=>'required | numeric | min:3 | max:13',
+            'age'=>'required | numeric',
             'phone'=>'required | regex:/^1[34578][0-9]{9}$/',
             'address'=>'required',
         ];
@@ -48,8 +48,6 @@ class RegisterRequest extends Request
             'name.between' => '用户名长度在4-12之间',
             'password.required' => '请输入密码',
             'age.required' => '请输入年龄',
-            'age.min' => '年龄应该在4-12岁之间',
-            'age.max' => '年龄应该在4-12岁之间',
             'phone.required' => '请输入手机号',
             'phone.regex'=> '手机号不合法',
             'address.required' => '请输入地址',
