@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">    
+     <title>#{host=hostname/}</title>
+<meta name="keywords" content="#{host=hostkey/}">
+<meta name="description" content="#{host=hostdesc/}">  
+   
+    
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/> 
+    <link rel="stylesheet" href="css/exploration.css"/>
+	<script src="js/jquery.min.js"></script>
+    
+</head>
+<body>
+<div id="header">
+    <div class="header-main">
+        <div class="header-container clearfix">
+            <div class="nav-list"> 
+            
+      <ul class="menu">
+       <li id="li-1"><a href="/index.htm" class="current">首页</a></li>
+        <li><a href="/aboutus/">关于我们</a> </li>
+        <li ><a href="/pro">宝黎猫产品</a>
+        
+		     <ul class="menu-item clearfix"  style="margin-left:35px">
+                                <li>
+                                <a href="/pro/a"><img src="images/ico-1.png"/></a>
+                                <p><a href="/pro/a">奇趣七巧板</a></p>
+                                </li>
+                                <li>
+                                <a href="/pro/b"><img src="images/ico-2.png"/></a>
+                                <p><a href="/pro/b">趣味拼词</a></p>
+                                </li>
+                                <li>
+                                <a href="/pro/c"><img src="images/ico-3.png"/></a>
+                                <p><a href="/pro/c">数字森林</a></p>
+                                </li>
+                                <li>
+                                <a href="/pro/d"><img src="images/ico-4.png"/></a>
+                                <p><a href="/pro/d">神奇画笔</a></p>
+                                </li>
+                                <li>
+                                <a href="/pro/e"><img src="images/ico-5.png"/></a>
+                                <p><a href="/pro/e">小球弹弹乐</a></p>
+                                </li>                               
+               </ul>
+        
+        </li>
+        <li><a href="/huiyuan/">会员中心</a></li>
+        <li><a href="/service/">服务与支持</a></li>
+        <li><a href="/sc/">产品商城</a></li>
+
+</ul>
+           </div>
+           
+<a href="/" class="logo">
+    <img src="images/logo.png" alt="logo" title="logo"/>
+</a>            
+
+<div class="header-account-wrapper">
+    <div class="header-account-panel" style="display:none;">
+            <a href="" rel="nofollow">登录</a>
+            <a href="" rel="nofollow">注册</a>        
+    </div>    
+</div>
+
+      </div>
+    </div>
+</div>
+
+
+
+    
+
+<div class="content-wrapper">
+
+#{linklist top=1 orderby=px linkclass=服务支持}
+<div class="about-banner margin" style="background:url([linklogo/]) no-repeat top center;"> </div>
+{/}
+<div class="fenav">
+
+  <div class="inner">
+    <ul id="menu">
+    #{menu menutype=sun orderby=px classid=4} 
+	<li><a href="[typelink/]" id="n[px/]">[classname/]</a></li>
+    {/} 
+	</ul>
+         <script type="text/javascript">
+  var urlstr = location.href;
+  //alert((urlstr + '/').indexOf($(this).attr('href')));
+  var urlstatus=false;
+  $("#menu a").each(function () {
+    if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+      $(this).addClass('curr'); urlstatus = true;
+    } else {
+      $(this).removeClass('curr');
+    }
+  });
+  if (!urlstatus) {$("#menu a").eq(0).addClass('curr'); }
+</script>
+  </div>
+</div>
+
+       <div class="serviceBox1">
+						<div class="qaListWrap block">
+							<ul class="qaList">
+                             		#{artlist pagesize=100 orderby=id}	
+                                 <li>
+									<p class="que">Q：[title/]</p>
+									<div class="ans">
+										<span class="ico sprite"></span>
+										<div class="text">
+                                       [content/]<br />
+                                       <a href="[typelink/]">查看详情</a>
+                                        </div>
+									</div>
+								</li>
+                            	 {/}
+                            							</ul>
+						</div>
+                         
+
+					
+					
+				</div>
+</div>
+    
+</div>
+
+
+
+<div id="footer">
+  <div class="footer-container clearfix">
+        <div class="bottom-logo">
+            <img width="113" src="images/logo-bottom.png" alt=""/>
+        </div>
+                    <ul>
+                    <li><h3>服务支持</h3></li>
+                    #{menu menutype=sun orderby=px classid=4}
+  <LI><A href="[typelink/]"  rel="nofollow">[classname/]</A></LI>
+  {/}
+                  
+                    </ul>
+                    
+<ul>
+                    <li><h3>资讯动态</h3></li>
+       #{menu menutype=sun orderby=px classid=3}
+  <LI><A href="[typelink/]"  rel="nofollow">[classname/]</A></LI>
+  {/}
+      </ul>
+                    
+                    <ul>
+                    <li><h3>关于我们</h3></li>
+                    #{menu menutype=sun orderby=px classid=1}
+  <LI><A href="[typelink/]"  rel="nofollow">[classname/]</A></LI>
+  {/}
+                    </ul>
+                    
+      <ul>
+                    <li><h3>关注我们</h3></li>
+                    <li style="position: relative"><a rel="nofollow" href="javascript:;" id="pt_code">新浪微博</a><img id="qcode" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="images/img_wechat_qrcode@2x.png" alt=""/></li>
+                    <li style="position: relative"><a rel="nofollow" href="javascript:;" id="pt_code2">官方微信</a><img id="qcode2" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="images/img_wechat_qrcode@2x.png" alt=""/></li>
+                    </ul>
+                    
+                   
+        <script>
+            document.getElementById('pt_code').onmouseenter= function () {
+                document.getElementById('qcode').style.display='block';
+            }
+            document.getElementById('pt_code').onmouseleave= function () {
+                document.getElementById('qcode').style.display='none';
+            }
+            document.getElementById('pt_code2').onmouseenter= function () {
+                document.getElementById('qcode2').style.display='block';
+            }
+            document.getElementById('pt_code2').onmouseleave= function () {
+                document.getElementById('qcode2').style.display='none';
+            }
+        </script>
+  <div class="online">
+            <div style="text-align: right">
+                <a href="javascript:;">
+                    <img  width="110"  style="CURSOR: pointer" onclick="javascript:window.open('');"  border="0" SRC=images/btn_consult_qq@2x.png alt="点击这里给我发消息">
+                 
+              </a>
+            </div>
+            <p class="tel"><a href="tel:">#{host=hosttel/}
+        </a></p>
+        </div>
+    </div>
+</div>
+
+<div class="copyright">
+    <div class="copyright-inner">
+    #{host=powerby/}
+        
+    </div>
+</div>
+
+
+<script src="js/bootstrap.min.js"></script>
+	<!--网站脚本加载模块开始-->
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.plus.extend.js"></script>
+	<script src="js/jquery.main.js"></script>
+	<!--网站脚本加载模块结束-->
+
+</body>
+</html>  
