@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\CallRegisterJob;
 use App\Moloquent\Register;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,20 @@ class RegController extends Controller
     //进行注册处理
     public function register(Requests\RegisterRequest $request)
     {
-        $register = new Register();
+        $register = new \stdClass();
         $register->email = $request->get('email');
         $register->name = $request->get('name');
         $register->password = $request->get('password');
         $register->age = $request->get('age');
         $register->phone = $request->get('phone');
         $register->address = $request->get('address');
-        $register->save();
+        $result = $this->dispatch(new CallRegisterJob($register));
+        var_dump($result);
+        if ($result['reason'] == '110') {
+            return redirect()->back()->withErrors("此邮箱已注册!");
+        } else if ($result['code'] != '0') {
+            return redirect()->back()->withErrors("接口错误!");
+        }
         return redirect('/regsave');
     }
 
